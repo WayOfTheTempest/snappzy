@@ -9,11 +9,12 @@ my_bot= ChatBot(name='Boris', read_only=False,
 logic_adapters=['chatterbot.logic.MathematicalEvaluation',
                 'chatterbot.logic.BestMatch'])
 
-trainer = UbuntuCorpusTrainer(my_bot)
-trainer.train()
+trainer = ChatterBotCorpusTrainer(my_bot)
+trainer.train("chatterbot.corpus.english")
 while True:
     a=str(input("Denis:"))
     response=my_bot.get_response(a)
+    #chatterbot name is boris
     print("Boris:",response)
                     
 """small_talk = ['hi there!',
